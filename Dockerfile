@@ -7,6 +7,6 @@ RUN mvn -f /app/vic/pom.xml clean package -DskipTests
 # Stage 2: Run the Spring Boot app
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/vic/target/*.jar app.jar
+COPY --from=build /vic/src/target/*.jar app.jar
 EXPOSE 7000
 ENTRYPOINT ["java", "-jar", "app.jar"]
