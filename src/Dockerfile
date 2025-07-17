@@ -8,5 +8,5 @@ RUN mvn -f /app/pom.xml clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8080
+EXPOSE 7000
 ENTRYPOINT ["java", "-jar", "app.jar"]
